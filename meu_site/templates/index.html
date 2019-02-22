@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
     <script src="main.js"></script>
 </head>
 <body>
-    <h1>Bem vindo á minha página inicial</h1>
-    <h3></h3>
+    <h1>Meu portfólio</h1>
+
+
+    <h3>Meus conhecimentos</h3>
+    <ul>
+        <li>Git</li>
+        <li>Python</li>
+        <li>Django</li>
+        <li>JavaScript</li>
+        
+        {% for item in eu.conhecimentos %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Meu endereço</h3>
+    <ul>
+        <li>São Paulo</li>
+        <li>Santo amaro, zona sul</li>
+    </ul>
+
 </body>
 </html>
